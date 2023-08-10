@@ -4,8 +4,8 @@
 
 #ifndef BALLISTICS_RIGHTPARTOFDIFFEQ_HPP
 #define BALLISTICS_RIGHTPARTOFDIFFEQ_HPP
-#include "/Utils/Utils.hpp"
-#include "Laser-P/GimbalControl/GuidanceDevice.hpp"
+#include "../../../signal_processing_test/Utils/Types.hpp"
+#include "../../../signal_processing_test/Control/GuidanceDevice.hpp"
 
 namespace Integrators {
 
@@ -16,9 +16,9 @@ namespace Integrators {
         using Time = double;
 
         struct Params{
-            const Matrix2d A;
-            const Matrix2d B;
-            const Vector2d control;
+            const Matrix2s A;
+            const Matrix2s B;
+            const Vector2s control;
             const scalar timeStep;
 
         };
@@ -30,13 +30,13 @@ namespace Integrators {
 
         [[nodiscard]] static inline Vector<scalar, size> calc(const State &stateVector, Params &params) {
 
-            const Vector2d u1 = stateVector.u.segment<2>(0);
+            const Vector2s u1 = stateVector.u.segment<2>(0);
 
-            const Vector2d u1Dot = stateVector.u.segment<2>(2);
+            const Vector2s u1Dot = stateVector.u.segment<2>(2);
 
-            const Vector2d controlU = params.control;
+            const Vector2s controlU = params.control;
 
-            const Vector2d force = params.B *(controlU - u1) - params.A * u1Dot;
+            const Vector2s force = params.B *(controlU - u1) - params.A * u1Dot;
 
             return Vector<scalar, size>{stateVector.u[2], stateVector.u[3], force[0], force[1]};
 

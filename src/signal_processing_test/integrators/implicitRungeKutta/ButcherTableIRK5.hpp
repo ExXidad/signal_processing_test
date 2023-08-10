@@ -5,7 +5,7 @@
 #ifndef BALLISTICS_BUTCHERTABLEIRK5_HPP
 #define BALLISTICS_BUTCHERTABLEIRK5_HPP
 
-#include "Laser-P/Utils/Utils.hpp"
+#include "../../../signal_processing_test/Utils/Types.hpp"
 
 namespace Integrators::ImplicitRK {
     // The Radau method

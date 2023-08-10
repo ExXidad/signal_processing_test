@@ -5,7 +5,7 @@
 #ifndef LASER_P_BUTCHERTABLEEXPLICITEULER_HPP
 #define LASER_P_BUTCHERTABLEEXPLICITEULER_HPP
 
-#include "Laser-P/Utils/Utils.hpp"
+#include "../../../signal_processing_test/Utils/Types.hpp"
 
 namespace Integrators::ExplicitRK {
 

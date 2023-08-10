@@ -4,7 +4,7 @@
 
 #ifndef BALLISTICS_BUTCHERTABLEERK4_HPP
 #define BALLISTICS_BUTCHERTABLEERK4_HPP
-#include "Laser-P/Utils/Utils.hpp"
+#include "../../../signal_processing_test/Utils/Types.hpp"
 
 namespace Integrators::ExplicitRK {
 

@@ -5,7 +5,7 @@
 #ifndef BALLISTICS_EXPLICITRUNGEKUTTA_HPP
 #define BALLISTICS_EXPLICITRUNGEKUTTA_HPP
 
-#include "Laser-P/Utils/Utils.hpp"
+#include "../../../signal_processing_test/Utils/Types.hpp"
 
 namespace Integrators::ExplicitRK {
 
@@ -27,13 +27,13 @@ namespace Integrators::ExplicitRK {
             double tTmp = initState.t;
             std::vector<typename RightPart::State> solution = {initState};
 
-            for (integer j = 0; j < numOfIter; ++j) {
+            for (int j = 0; j < numOfIter; ++j) {
                 // Calculating k[i]
                 std::vector<Vector<scalar, RightPart::size>> kMas = {RightPart::calc({uTmp, tTmp}, params)};
                 uint n = 0;
-                for (integer i = 1; i < ButcherTable::size; ++i) {
+                for (int i = 1; i < ButcherTable::size; ++i) {
                     Vector<scalar, RightPart::size> sum = Vector<scalar, RightPart::size>::Zero();
-                    for (integer k = 0; k < i; ++k)
+                    for (int k = 0; k < i; ++k)
                     {
                         sum += ButcherTable::matrix[n + k] * kMas[k];
                     }
@@ -44,7 +44,7 @@ namespace Integrators::ExplicitRK {
                 }
                 // Calculating sum k[i] * b[i];
                 Vector<scalar, RightPart::size> sum = Vector<scalar, RightPart::size>::Zero();
-                for (integer i = 0; i < ButcherTable::size; ++i) {
+                for (int i = 0; i < ButcherTable::size; ++i) {
                     sum += kMas[i] * ButcherTable::row[i];
                 }
 

@@ -17,6 +17,10 @@ using byte = uint8_t;
 using Matrix2s = Eigen::Matrix<scalar, 2, 2>;
 using Vector2s = Eigen::Vector<scalar, 2>;
 
+template <typename T, int Size>
+using Vector = Eigen::Vector<T, Size>;
+template<typename T, uint n, uint m> using Matrix = Eigen::Matrix<T, n, m>;
+
 #ifdef MCU
 #include <etl/array.h>
 template<typename T, sizeType size>
