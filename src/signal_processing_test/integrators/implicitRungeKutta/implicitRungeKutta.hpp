@@ -51,7 +51,7 @@ namespace Integrators::ImplicitRK {
                     // Here we will check whether we have achieved the required accuracy in solving the system
                     key = true;
                     for (int i = 0; i < ButcherTable::size; ++i) {
-                        key *= isEqualByRelativeError<scalar,RightPart::size>(kTmp.row(i),  k.row(i), intParams.toleranceOfSNAE);
+                        key *= SignalProcessingUtils::isEqualByRelativeError<scalar,RightPart::size>(kTmp.row(i),  k.row(i), intParams.toleranceOfSNAE);
                     }
                     k = kTmp;
                 }

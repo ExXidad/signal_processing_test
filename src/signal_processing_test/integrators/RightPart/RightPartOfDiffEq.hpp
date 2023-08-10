@@ -18,7 +18,7 @@ namespace Integrators {
         struct Params{
             const Matrix2s A;
             const Matrix2s B;
-            const Vector2s control;
+            Vector2s control;
             const scalar timeStep;
 
         };
