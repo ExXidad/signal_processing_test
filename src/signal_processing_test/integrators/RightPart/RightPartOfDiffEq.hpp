@@ -4,16 +4,16 @@
 
 #ifndef BALLISTICS_RIGHTPARTOFDIFFEQ_HPP
 #define BALLISTICS_RIGHTPARTOFDIFFEQ_HPP
+#include "../../../signal_processing_test/Control/Controllers.hpp"
 #include "../../../signal_processing_test/Utils/Types.hpp"
-#include "../../../signal_processing_test/Control/GuidanceDevice.hpp"
 
 namespace Integrators {
 
     struct RightPartFSM{
         // thetaDot = p
-        // pDot = A * (u(t, theta) - p) - B * theta
+        // pDot = B * (u(t, theta) - theta) - A * p
         constexpr static uint size = 4;
-        using Time = double;
+        using Time = scalar;
 
         struct Params{
             const Matrix2s A;

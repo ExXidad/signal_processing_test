@@ -5,6 +5,7 @@
 #ifndef BALLISTICS_IMPLICITRUNGEKUTTA_HPP
 #define BALLISTICS_IMPLICITRUNGEKUTTA_HPP
 #include "../../../signal_processing_test/Utils/Types.hpp"
+#include "../../../signal_processing_test/Utils/Utils.hpp"
 
 
 namespace Integrators::ImplicitRK {
@@ -26,7 +27,7 @@ namespace Integrators::ImplicitRK {
 
             const auto numOfIter = static_cast<uint>(std::abs(initState.t - intParams.tFinal) / intParams.step);
             Vector<scalar, RightPart::size> uTmp = initState.u;
-            double tTmp = initState.t;
+            scalar tTmp = initState.t;
             std::vector<typename RightPart::State> solution = {initState};
 
             Matrix<scalar, ButcherTable::size, RightPart::size> k =

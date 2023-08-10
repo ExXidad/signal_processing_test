@@ -2,7 +2,7 @@
 // Created by Ivan Kalesnikau on 16.07.2023.
 //
 
-#include "Utils/Types.hpp"
+#include "signal_processing_test/Utils/Types.hpp"
 #include "third_party/MCU_Libs/SignalProcessors/GoertzelFrequencyDetectionSignalProcessor.hpp"
 #include "third_party/MCU_Libs/SignalProcessors/ParallelSignalProcessing.hpp"
 #include "third_party/MCU_Libs/SignalProcessors/QPD_PositionSignalProcessor.hpp"
