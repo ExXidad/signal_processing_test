@@ -1,0 +1,16 @@
+/build
+/.idea
+
+/cmake-build-debug/*
+/cmake-build-release/*
+/cmake-build-minsizerel/*
+/cmake-build-relwithdebinfo*
+
+main.cpp
+a.out
+*.swp
+test_package/build/
+.DS_Store
+
+*.g3log.*
+/clear_log.sh
